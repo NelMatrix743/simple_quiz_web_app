@@ -1,0 +1,8 @@
+/**
+ * SOURCE CODE VERSION: 1.0
+ * FILE/TYPE: JS
+ * PROGRAMMER: NELSON CHIDI (NELMATRIX)
+ * DATE-TIME CREATED: SEPT 13, 2025; 1:03PM
+ * REPOSITORY: https://github.com/NelMatrix743/simple_quiz_web_app.git
+ */
+
