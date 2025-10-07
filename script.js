@@ -6,6 +6,8 @@
  * REPOSITORY: https://github.com/NelMatrix743/simple_quiz_web_app.git
  */
 
+
+// implement 10 CS questions
 const questionLists =  [
   {
     question: "Which data structure uses the First-In-First-Out (FIFO) principle?",
@@ -99,3 +101,8 @@ const questionLists =  [
   }
 ];
 
+
+// map HTML elements to JS DOM objects
+const questionComponent = document.getElementById("question");
+const answerButtons = document.getElementById("answer-buttons");
+const nextQuestionButton = document.getElementById("nxt-btn");
