@@ -80,3 +80,27 @@ body {
   margin: 20px auto 0;
   cursor: pointer;
 }
+
+.score-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  color: #001e4d;
+  width: 90%;
+  max-width: 600px;
+  margin: 100px auto 0;
+  padding: 30px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.score-num {
+  padding-left: 10px;
+  padding-bottom: 5px;
+  color: red;
+  font-size: 30px;
+  font-weight: 500;
+  font-family: consolas;
+}
