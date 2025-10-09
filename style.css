@@ -14,20 +14,21 @@
 }
 
 body {
-  background: #001e4d;
+  background: #343D3F;
 }
 
 .entry-point {
-  background: #ffffff;
+  background: #1E2729;
   width: 90%;
   max-width: 600px;
   margin: 100px auto 0;
   padding: 30px;
   border-radius: 10px;
+  border: 2px solid #B8CACD;
 }
 
 .entry-point h1 {
-  color: #001e4d;
+  color: #B8CACD;
   font-size: 25px;
   font-weight:  600;
   border-bottom: 1px solid #333333;
@@ -40,13 +41,13 @@ body {
 
 .quiz-display h2 {
   font-size: 18px;
-  color: #001e4d;
+  color: #B8CACD;
   font-weight: 600px;
   padding-bottom: 10px;
 }
 
 .btn {
-  background: #ffffff;
+  background: #B8CACD;
   color: #222222;
   font-weight: 500px;
   width: 100%;
@@ -70,9 +71,9 @@ body {
 
 #nxt-btn {
   display: none;
-  background: #001e4d;
-  color: #ffffff;
-  font-weight: 500;
+  background: #B8CACD;
+  color: #343D3F;
+  font-weight: 600;
   width: 170px;
   border: none;
   border-radius: 4px;
@@ -85,8 +86,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #ffffff;
-  color: #001e4d;
+  background: #B8CACD;
+  color: #343D3F;
   width: 90%;
   max-width: 600px;
   margin: 100px auto 0;
