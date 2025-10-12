@@ -137,19 +137,19 @@ function startQuiz(currentQuestionIdx, score){
 
 // main section
 
-let currentQuestionIndex = 0;
-let currentScore = 0;
+let currentQuestionIndex;
+let currentScore;
 
-// let progress = sessionStorage.getItem("QUIZ_IN_PROGRESS");
+let progress = sessionStorage.getItem("QUIZ_IN_PROGRESS");
 
-// if(!Boolean(progress)){
-//   sessionStorage.setItem("QUIZ_IN_PROGRESS", !Boolean(progress));
-//   currentQuestionIndex = 0;
-//   currentScore = 0;
-// } else {
-//   currentQuestionIndex = sessionStorage.getItem("CURRENT_QUESTION");
-//   currentScore = sessionStorage.getItem("CURRENT_SCORE");
-// }
+if(!Boolean(progress)){
+  sessionStorage.setItem("QUIZ_IN_PROGRESS", "true");
+  currentQuestionIndex = 0;
+  currentScore = 0;
+} else {
+  currentQuestionIndex = Number(sessionStorage.getItem("CURRENT_QUESTION"));
+  currentScore = Number(sessionStorage.getItem("CURRENT_SCORE"));
+}
 
 
 startQuiz(currentQuestionIndex, currentScore);
