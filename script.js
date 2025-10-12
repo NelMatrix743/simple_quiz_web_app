@@ -106,3 +106,23 @@ const questionLists =  [
 const questionComponent = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextQuestionButton = document.getElementById("nxt-btn");
+const scoreNumElement = document.getElementById("score-num");
+
+
+
+// main section
+
+let currentQuestionIndex;
+let currentScore;
+
+let progress = sessionStorage.getItem("QUIZ_IN_PROGRESS");
+
+if(!Boolean(progress)){
+  sessionStorage.setItem("QUIZ_IN_PROGRESS", !Boolean(progress));
+  currentQuestionIndex = 0;
+  currentScore = 0;
+} else {
+  currentQuestionIndex = sessionStorage.getItem("CURRENT_QUESTION");
+  currentScore = sessionStorage.getItem("CURRENT_SCORE");
+}
+
