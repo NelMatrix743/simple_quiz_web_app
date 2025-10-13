@@ -69,8 +69,7 @@ body {
   cursor: no-drop;
 }
 
-#nxt-btn {
-  display: none;
+.control-btn {
   background: #B8CACD;
   color: #343D3F;
   font-weight: 600;
@@ -80,6 +79,11 @@ body {
   padding: 15px;
   margin: 20px auto 0;
   cursor: pointer;
+}
+
+.control-btn-container {
+  display: flex;
+  padding-right: 10px;
 }
 
 .score-container {

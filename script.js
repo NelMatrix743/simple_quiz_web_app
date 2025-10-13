@@ -14,6 +14,7 @@ console.log(questionLists[0]);
 const questionComponent = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextQuestionButton = document.getElementById("nxt-btn");
+const restartQuizButton = document.getElementById("rst-btn");
 const scoreNumElement = document.getElementById("score-num");
 
 
@@ -37,7 +38,7 @@ function displayQuestion(currentQuestionIndex){
 
 
 function startQuiz(currentQuestionIdx, score){
-  nextQuestionButton.style.display = "block";
+  //nextQuestionButton.style.display = "block";
   nextQuestionButton.innerHTML = "NEXT QUESTION";
   displayQuestion(currentQuestionIdx);
 }
