@@ -87,8 +87,8 @@ body {
   border: 1px solid #B8CACD;
 }
 
-.control-btn-container {
-  display: flex;
+#control-btn-container {
+  display: none;
   padding-right: 10px;
 }
 

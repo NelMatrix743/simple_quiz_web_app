@@ -15,6 +15,7 @@ const answerButtons = document.getElementById("answer-buttons");
 const nextQuestionButton = document.getElementById("nxt-btn");
 const restartQuizButton = document.getElementById("rst-btn");
 const scoreNumElement = document.getElementById("score-num");
+const controlButtonContainer = document.getElementById("control-btn-container");
 
 
 function debugCallBack(){
@@ -41,7 +42,9 @@ function selectAnswer(elmnt){
     }
     button.disabled = true;
   });
-  nextQuestionButton.style.display = "block";
+  if(currentQuestionIndex === 0){
+    controlButtonContainer.style.display = "flex";
+  }
 }
 
 
@@ -62,7 +65,7 @@ function displayQuestionAndScore(currentQuestionIndex, userScore){
     const optionButton = document.createElement("button");
     optionButton.classList.add("btn");
     optionButton.innerHTML = answer.option;
-    optionButton.addEventListener("click", selectAnswer.bind(userScore));
+    optionButton.addEventListener("click", selectAnswer);
     optionButton.dataset.correct = answer.isCorrect;
 
     answerButtons.appendChild(optionButton);
@@ -79,7 +82,7 @@ function resetQuiz(){
   sessionStorage.removeItem("QUIZ_IN_PROGRESS");
   startQuiz(currentQuestionIndex, currentScore);
   // hide next question button
-  nextQuestionButton.style.display = "none"
+  controlButtonContainer.style.display = "none"
   // reload page
   location.reload();
 }
