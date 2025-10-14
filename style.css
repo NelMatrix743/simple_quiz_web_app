@@ -57,7 +57,7 @@ body {
   text-align: left;
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.5s;
+  transition: all 0.2s;
 }
 
 .btn:hover:not([disabled]) {
@@ -81,9 +81,19 @@ body {
   cursor: pointer;
 }
 
+.control-btn:active { 
+  background-color: #343D3F;
+  color: #B8CACD;
+  border: 1px solid #B8CACD;
+}
+
 .control-btn-container {
   display: flex;
   padding-right: 10px;
+}
+
+#nxt-btn {
+  display: none;
 }
 
 .score-container {
@@ -101,11 +111,19 @@ body {
   font-size: 20px;
 }
 
-.score-num {
+#score-num {
   padding-left: 10px;
   padding-bottom: 5px;
   color: red;
   font-size: 30px;
   font-weight: 500;
   font-family: consolas;
+}
+
+.correct {
+  background-color: #9aeabc;
+}
+
+.incorrect {
+  background-color: #ff9393;
 }
