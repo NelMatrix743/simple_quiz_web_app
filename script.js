@@ -117,6 +117,7 @@ nextQuestionButton.addEventListener("click", () => {
   if(nextQuestionButton.innerHTML === "FINISH"){
     window.alert("YOUR TOTAL SCORE IS: " + currentScore);
     nextQuestionButton.style.display = "none";
+    restartQuizButton.innerHTML = "QUIZ AGAIN";
     return;
   }
   if(currentQuestionIndex === 8){
@@ -131,4 +132,5 @@ nextQuestionButton.addEventListener("click", () => {
 });
 
 
+// call entry point
 startQuiz(currentQuestionIndex, currentScore);
