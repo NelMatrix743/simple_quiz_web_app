@@ -8,7 +8,6 @@
 
 import questionLists from "./questions.js";
 
-console.log(questionLists[0]);
 
 // map HTML elements to JS DOM objects
 const questionComponent = document.getElementById("question");
@@ -16,6 +15,11 @@ const answerButtons = document.getElementById("answer-buttons");
 const nextQuestionButton = document.getElementById("nxt-btn");
 const restartQuizButton = document.getElementById("rst-btn");
 const scoreNumElement = document.getElementById("score-num");
+
+
+function debugCallBack(){
+  window.alert("DEBUGGING...");
+}
 
 
 function selectAnswer(elmnt){
@@ -41,11 +45,14 @@ function selectAnswer(elmnt){
 }
 
 
-function displayQuestion(currentQuestionIndex, userScore){
+function displayQuestionAndScore(currentQuestionIndex, userScore){
   // render question
   let currentQuestion = questionLists[currentQuestionIndex];
   let questionNumber = currentQuestionIndex + 1;
   questionComponent.innerHTML = `${questionNumber}. ${currentQuestion.question}`;
+
+  // render score
+  scoreNumElement.innerHTML = userScore;
 
   // clear previous answers
   answerButtons.innerHTML = "";
@@ -63,9 +70,23 @@ function displayQuestion(currentQuestionIndex, userScore){
 }
 
 
+function resetQuiz(){
+ // reset all data persistence
+  currentQuestionIndex = 0;
+  currentScore = 0;
+  sessionStorage.setItem("CURRENT_QUESTION", currentQuestionIndex);
+  sessionStorage.setItem("CURRENT_SCORE", currentScore);
+  sessionStorage.removeItem("QUIZ_IN_PROGRESS");
+  startQuiz(currentQuestionIndex, currentScore);
+  // hide next question button
+  nextQuestionButton.style.display = "none"
+  // reload page
+  location.reload();
+}
+
+
 function startQuiz(currentQuestionIdx, userScore){
-  nextQuestionButton.innerHTML = "NEXT QUESTION";
-  displayQuestion(currentQuestionIdx, userScore);
+  displayQuestionAndScore(currentQuestionIdx, userScore);
 }
 
 
@@ -83,7 +104,28 @@ if(!Boolean(progress)){
 } else {
   currentQuestionIndex = Number(sessionStorage.getItem("CURRENT_QUESTION"));
   currentScore = Number(sessionStorage.getItem("CURRENT_SCORE"));
+  nextQuestionButton.style.display = "block";
 }
+
+
+restartQuizButton.addEventListener("click", resetQuiz);
+
+nextQuestionButton.addEventListener("click", () => {
+  if(nextQuestionButton.innerHTML === "FINISH"){
+    window.alert("YOUR TOTAL SCORE IS: " + currentScore);
+    nextQuestionButton.style.display = "none";
+    return;
+  }
+  if(currentQuestionIndex === 8){
+    nextQuestionButton.innerHTML = "FINISH";
+  }
+  if(currentQuestionIndex < questionLists.length){
+    currentQuestionIndex++;
+    sessionStorage.setItem("CURRENT_QUESTION", currentQuestionIndex);
+    sessionStorage.setItem("CURRENT_SCORE", currentScore);
+    displayQuestionAndScore(currentQuestionIndex, currentScore);
+  }
+});
 
 
 startQuiz(currentQuestionIndex, currentScore);
